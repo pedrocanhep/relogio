@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+/* IMPORTANDO FONTES */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap');
+@font-face {
+  font-family: 'Digital';
+  src: url(../font/digital_7/digital-7\ \(mono\).ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CONF RELÓGIOS */
+#relogio {
+  display: block;
+}
+
+/* CONF RELÓGIO DE PONTEIRO */
+main#ponteiro {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 50%;
+  transform: translate(-50%,-40%);
+  padding: 0;
+}
+
+.clock {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 15px solid #ff9600;
+  box-shadow: 1px 1px 2px #0000004b;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  font: 500 1.5em Montserrat;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.number1 {
+  transform: rotate(30deg);
+}
+.number2 {
+  transform: rotate(60deg);
+}
+.number3 {
+  transform: rotate(90deg);
+}
+.number4 {
+  transform: rotate(120deg);
+}
+.number5 {
+  transform: rotate(150deg);
+}
+.number6 {
+  transform: rotate(180deg);
+}
+.number7 {
+  transform: rotate(210deg);
+}
+.number8 {
+  transform: rotate(240deg);
+}
+.number9 {
+  transform: rotate(270deg);
+}
+.number10 {
+  transform: rotate(300deg);
+}
+.number11 {
+  transform: rotate(330deg);
+}
+.number12 {
+  transform: rotate(0deg);
+}
+
+#circulo {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: #111;
+  border-radius: 50%;
+}
+
+.segundo {
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background-color: #f00;
+  border-radius: 5px;
+  transform: translate(0, -50%);
+  transform-origin: bottom center;
+}
+.minuto {
+  position: absolute;
+  width: 4px;
+  height: 135px;
+  background-color: #222;
+  border-radius: 5px;
+  transform: translate(0, -50%);
+  transform-origin: bottom center;
+}
+.hora {
+  position: absolute;
+  width: 6px;
+  height: 120px;
+  background-color: #111;
+  border-radius: 7px;
+  transform: translate(0, -50%);
+  transform-origin: bottom center;
+}
+
+/* CONF RELOGIO DIGITAL */
+main#digital {
+  position: absolute;
+  width: 700px;
+  height: 250px;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-40%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #121813;
+  border: 10px groove #000;
+  border-radius: 50px;
+  display: none;
+}
+
+.dig {
+  font: 500 7em 'Digital', monospace;
+  color: #EBEAE5;
+  width: 90%;
+  text-align: center;
+}
+
+/* CONF RELOGIO SOLAR */
+main#solar {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  top: 50%;
+  transform: translate(-50%,-25%);
+  padding: 0;
+}
+
+.solarClock {
+  box-shadow: 
+    inset 0 0 0 21px #e4e3e0,
+    inset 0 0 0 33px #fff,
+    inset 0 0 0 100px #e4e3e0
+  ;
+  /* background-image: linear-gradient(to bottom, #ff0, #ffc710 70%); */
+
+  display: flex;
+
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.solarClock::before {
+  content: "";
+  box-shadow: inset 10px 60px 14px -25px rgba(0,255,0,1);
+  position: absolute;
+  bottom: 0;
+  width: 500px;
+  height: 240px;
+  background-color: #e4e3e0;
+}
+
+.astro {
+  padding: 0;
+  font-size: 2.5em;
+  width: 250px;
+  line-height: 50px;
+  transform-origin: right center;
+}
+
+.hourSol {
+  font: 500 2.2em Montserrat, monospace;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* CONF RODAPÉ relógios */
+footer#rodapeRelogio {
+  bottom: 0;
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+}
+
+div.buttonsOptions {
+  height: 100%;
+  width: 420px;
+  background-color: #282729;
+  border-radius: 0 20px 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+div.buttonsOptions > button {
+  list-style: none;
+  line-height: 55px;
+  background-color: #c91e2c;
+  width: 125px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 2.2em;
+  color: #fff;
+  font-family: 'Digital', monospace;
+  border: 2px solid #7e0711;
+}
+
+#buttonPonteiro {
+  border: 1px solid #fff;
+}
+
+div.buttonsOptions > button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #00000087;
+  margin: 0 2px 2px 0;
+}
+
+div.buttonsOptions > button:active {
+  box-shadow: none;
+  background-color: #e43240;
+  border: 2px solid #c91e2c;
+}

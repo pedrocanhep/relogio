@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* IMPORTANDO FONTES */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap');
+@font-face {
+  font-family: 'Digital';
+  src: url(../font/digital_7/digital-7\ \(mono\).ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CONF UNIVERSAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONF DO CORPO DA PÁGINA */
+body {
+  height: 100vh;
+  background-color: #e4e3e0;
+}
+
+/* CONF CABEÇALHO */
+header {
+  background-color: #282729;
+  padding-bottom: 0;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+}
+
+header > h1 {
+  color: #ff9600;
+  font-family: "Poetsen One", sans-serif;
+  margin: 5px 0 20px 10px;
+  font-size: 2.5em;
+}
+
+header > nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: end;
+}
+
+header > nav > menu {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: end;
+  margin-right: 15px;
+}
+
+header > nav > menu > button {
+  background-color: transparent;
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-left: 1px solid #ffffff12;
+  border-right: 1px solid #ffffff12;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+header > nav > menu > button:hover {
+  box-shadow: inset 0px -40px 40px -60px rgba(255, 255, 255);
+}
+
+.buttonRelogio {
+  border-bottom: 5px solid #fff;
+}
+
+.date {
+  margin: 5px 10px;
+}
+
+/* CONF DATA */
+.date {
+  font: 400 normal 1.2em Montserrat, monospace;
+  text-align: center;
+  color: #fff;
+}
+
+/* CONF CRÉDITOS */
+p.creditos {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font: 400 0.75em Montserrat, monospace;
+  margin: 0 7px 4px 0;
+  color: #111;
+  text-align: end;
+}
+
+p.creditos > a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
