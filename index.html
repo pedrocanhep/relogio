@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>RELÓGIO</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/relogio.css">
+  <link rel="stylesheet" href="css/cronometro.css">
+  <script defer src="js/relogio.js"></script>
+  <script defer src="js/cronometro.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Relógio <b>tech</b></h1>
+    <nav>
+      <menu>
+        <button class="buttonRelogio" onclick="showMainRelogio()">Relógio</button>
+        <button class="buttonCronometro" onclick="showMainCronometro()">Cronômetro</button>
+        <!-- <button class="buttonAlarme">Alarme</button>
+        <button class="buttonPomodoro">Pomodoro</button> 
+        para o futuro
+        -->
+      </menu>
+      <h2 class="date"></h2>
+    </nav>
+  </header>
+  
+  <div id="relogio">
+    <main id="ponteiro">
+      <div class="clock">
+        
+        <div id="circulo"></div>
+        <div class="hora"></div>
+        <div class="minuto"></div>
+        <div class="segundo"></div>
+        
+        <div class="number number1">1</div>
+        
+        <div class="number number2">2</div>
+        <div class="number number3">3</div>
+        <div class="number number4">4</div>
+        <div class="number number5">5</div>
+        <div class="number number6">6</div>
+        <div class="number number7">7</div>
+        <div class="number number8">8</div>
+        <div class="number number9">9</div>
+        <div class="number number10">10</div>
+        <div class="number number11">11</div>
+        <div class="number number12">12</div>
+      </section>
+    </main>
+    <main id="digital">
+      <p class="dig">00 :</p>
+    </main>
+    <main id="solar">
+      <div class="solarClock">
+        <div class="astro">☀️</div>
+        <p class="hourSol">00:00</p>
+      </div>
+    </main>
+    <footer id="rodapeRelogio">
+      <div class="buttonsOptions">
+          <button type="button" id="buttonPonteiro" onclick="showPointer()">🕛</button>
+          <button type="button" id="buttonDigital" onclick="showDigital()">12:00</button>
+          <button type="button" id="buttonSolar" onclick="showSolar()">☀️</button>
+      </div>
+    </footer>
+  </div>
+  
+  <id id="cronometro">
+    <main class="stopwatch">
+      <p class="timer">
+        00:00:00:00 
+      </p>
+      <div class="controls">
+        <button type="button" class="botao reload" title="reload">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <button type="button" class="botao power" title="power" action="start">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button type="button" class="botao mark" title="mark">
+          <i class="fa-solid fa-flag"></i>
+        </button>
+      </div>
+      <div class="marklist">
+        <!-- <p><i class="fa-regular fa-flag"></i> Marca 1: 00:00:00:000</p> -->
+      </div>
+
+    </main>
+
+  </id>
+
+  <!-- <id id="alarme">
+
+  </id>
+
+  <id id="pomodoro">
+
+  </id>
+  para continuar no futuro
+  -->
+
+  <p class="creditos">
+    Projeto desenvolvido por Pedro Canhe Pereira <br>
+    GitHub: <a href="https://www.github.com/pedrocanhep" target="_blank" rel="noopener"> pedrocanhep</a>
+  </p>
+
+  <script> // JS DO CÓDUGO PRINCIPAL
+    // Variável para a data do cabeçalho
+    const data = document.querySelector('.date')
+
+    // Variável para menu superior
+    const relogio = document.getElementById('relogio')
+    const cronometro = document.getElementById('cronometro')
+
+    const buttonRelogio = document.querySelector('.buttonRelogio')
+    const buttonCronometro = document.querySelector('.buttonCronometro')
+
+    // FAZENDO FUNCIONAR O MENU SUPERIOR
+    function showMainRelogio() {
+      relogio.style.display = 'flex'
+      cronometro.style.display = 'none'
+
+      buttonRelogio.style.borderBottom = '5px solid #fff'
+      buttonCronometro.style.borderBottom = 'none'
+    }
+
+    function showMainCronometro() {
+      cronometro.style.display = 'flex'
+      relogio.style.display = 'none'
+      
+      buttonCronometro.style.borderBottom = '5px solid #fff'
+      buttonRelogio.style.borderBottom = 'none'
+    }
+    // COLETANDO OS DADOS DE DATA E HORA ATUAL
+    const getDate = () => {
+      const date = new Date()
+
+      return {
+        day: date.getDate(),
+        month: date.getMonth(),
+        year: date.getFullYear()
+      } 
+    }
+
+    // FAZENDO FUNCIONAR A DATA
+    setInterval(() => {
+      const { day, month, year } = getDate()
+      var mes = ''
+  
+  
+      switch (month) {
+        case 0:
+          mes = 'janeiro'
+          break
+          case 1:
+          mes = 'fevereiro'
+          break
+        case 2:
+          mes = 'março'
+          break
+        case 3:
+          mes = 'abril'
+          break
+        case 4:
+          mes = 'maio'
+          break
+        case 5:
+          mes = 'junho'
+          break
+        case 6:
+          mes = 'julho'
+          break
+        case 7:
+          mes = 'agosto'
+          break
+        case 8:
+          mes = 'setembro'
+          break
+        case 9:
+          mes = 'outubro'
+          break
+        case 10:
+          mes = 'novembro'
+          break
+        case 11:
+          mes = 'dezembro'
+          break
+      }
+
+      data.innerHTML = `📆 ${day} de ${mes} de ${year}`
+    } , 10)
+
+  </script>
+</body>
+</html>
+
+<!-- 
+
+  PARA O FUTURO:
+  - Novas funcionalidades (alarme e pomodoro);
+  - Responsividade;
+  - Aprimorar código
+
+ -->
